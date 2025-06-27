@@ -1,5 +1,5 @@
 def p_num(num):
-    print(num, end = " ")
+    print(num, end = '')
 
 p_num(8)   
 p_num(8) 
