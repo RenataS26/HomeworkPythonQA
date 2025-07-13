@@ -8,5 +8,5 @@ class Address:
         self.apartament=apartament
 
     def __str__(self):
-        return f"{self.index},{self.city},{self.house} - {self.aoartment}"    
+        return f"{self.index},{self.city},{self.house} - {self.apartament}"    
 

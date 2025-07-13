@@ -1,3 +1,5 @@
+from address import Address
+
 class Mailing:
 
     def __init__(self,to_address,from_address,cost,track):
@@ -6,6 +8,9 @@ class Mailing:
         self.cost=cost
         self.track=track
 
+
     def __str__(self):
-        return (f"Отправление {self.track} из {self.faddress} в {self.taddress}. Стоимость {self.cost} рублей.")
+        faddress_str=",". join([str(address) for address in self.faddress])
+        taddress_str=",". join([str(address) for address in self.taddress])
+        return f"Отправление {self.track} из {faddress_str} в {taddress_str}. Стоимость {self.cost} рублей."
               
