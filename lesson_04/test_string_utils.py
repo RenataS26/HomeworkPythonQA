@@ -36,17 +36,16 @@ def test_trim_positiv(input_str,expected):
 @pytest.mark.parametrize("input_string", [
     None,
     425,
-    ["   testing test"],
+    ["testing test"],
         
 ])
-def test_trim_negative(input_string):
-    obj = StringUtils() 
-    try:
+def test_trim_negative_exceptions(input_string):
+    obj = StringUtils()
+    with pytest.raises(Exception):
         obj.trim(input_string)
-        assert False, f"Expected exception for input: {input_string}"
-    except Exception:
-        pass
-
+    
+    
+    
 #содержит искомый символ
 @pytest.mark.positiv
 @pytest.mark.parametrize("input_str, expected, symbol", [
@@ -54,7 +53,7 @@ def test_trim_negative(input_string):
     ("skypro", "skypro", "f"),
 ])
 def test_contain_positiv(input_str, expected, symbol):
-    assert string_utils.trim(input_str)== expected 
+    assert string_utils.contains(input_str)== expected 
 
 @pytest.mark.negativ
 @pytest.mark.parametrize("string,symbol", [
