@@ -1,0 +1,28 @@
+АТРИБУТ delete_symbol НЕ СУЩЕСТВУЕТ.
+
+ОПИСАНИЕ:
+Атрибут delete_symbol не существует для обьекта 'StringUtils', 
+в функции на удалении всех подстрок из переданной строки,
+при запуске автотеста для проверки работы данной функции.
+
+ШАГИ ВОСПРОИЗВЕДЕНИЯ:
+1. Составить позитивный тест на проверку функции:
+@pytest.mark.positiv
+@pytest.mark.parametrize("string,symbol,expected", [
+    ("hello world", "o", "hell wrld"),
+    ("test", "t", "es"),
+    ("aaaaa", "a", ""),
+    ("python", "z", "python"), 
+])
+def test_delete_symbol_positive(string, symbol, expected):
+    obj = StringUtils()  
+    result = obj.delete_symbol(string, symbol)
+    assert result == expecte
+2. Запустить проверку с помощью pytest.
+
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ: тест пройден без ошибок (PASSED)
+ФАКТИЧЕСКИЙ РЕЗУЛЬТАТ: тест завален(FAILED), ошибка  
+AttributeError: 'StringUtils' object has no attribute 'delete_symbol'  
+
+СЕРЬЕЗНОСТЬ: critical(критичная)
+ПРИОРИТЕТ: high (высокий)
