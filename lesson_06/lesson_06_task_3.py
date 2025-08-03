@@ -7,12 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.maximize_window()
-driver.implicitly_wait(20)
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/loading-images.html")
-wait=WebDriverWait(driver, 30)
+wait=WebDriverWait(driver, 40)
 
 img=wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "img")))
-wait=WebDriverWait(driver, 30)
 award_element= wait.until(EC.presence_of_element_located((By.ID, "award")))
 src=award_element.get_attribute("src")
 print(src)
