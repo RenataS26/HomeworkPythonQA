@@ -51,7 +51,7 @@ def test_form_validation_edge(driver):
    
     zip_code_classes = zip_code_field.get_attribute("class")
 
-    assert ("is-invalid" in zip_code_classes or "error" in zip_code_classes), "Zip code поле не подсвечено красным"
+    assert ("alert py-2 alert-danger" in zip_code_classes or "error" in zip_code_classes), "Zip code поле не подсвечено красным"
 
     fields_to_check = [
         "first-name", "last-name", "address", "e-mail",
@@ -61,4 +61,4 @@ def test_form_validation_edge(driver):
     for field_id in fields_to_check:
         field = driver.find_element(By.ID, field_id)
         field_classes = field.get_attribute("class")
-        assert ("is-valid" in field_classes or "valid" in field_classes), f"Поле {field_id} не подсвечено зелёным"
+        assert ("alert py-2 alert-success" in field_classes or "valid" in field_classes), f"Поле {field_id} не подсвечено зелёным"
